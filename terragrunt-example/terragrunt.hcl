@@ -2,7 +2,7 @@ terraform {
   source = "./modules/multi-account-vpc"
 }
 
-generate "multi-account-providers" {
+generate "multi_account_providers" {
   path      = "provider.tf"
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
