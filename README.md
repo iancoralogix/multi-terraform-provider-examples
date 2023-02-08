@@ -1,2 +1,4 @@
 # Multi-provider Terraform and Terragrunt examples
-The two directories, `terraform-example` and `terragrunt-example` show small examples of calling modules that expect more than one Terraform provider with either `terraform` or `terragrunt`. It's advisable to use `aws-vault` when testing locally, and you should call a profile in your `aws-vault exec` that can assume both of those roles. There are different approaches to authentication that are outside of the scope of this example. The purpose is to show two basic ways to configure your root Terraform module, or your monolithic Terragrunt module.
+
+### Overview
+The two directories, `terraform-example`, and `terragrunt-example` show small examples of calling modules that expect more than one Terraform provider with `terraform` or `terragrunt`. It's advisable to use `aws-vault` when testing locally, and you should call a profile in your `aws-vault exec` that can assume both of those roles. Different approaches to authentication are outside of the scope of this example. The purpose is to show two basic ways to configure your root Terraform module or your monolithic Terragrunt module.
