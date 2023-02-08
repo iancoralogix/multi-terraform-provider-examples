@@ -42,7 +42,7 @@ locals {
   target_account_provider_alias = "account_b"
 }
 
-generate "multi-account-providers" {
+generate "multi_account_providers" {
   path      = "provider.tf"
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
