@@ -1,13 +1,16 @@
-# Local .terraform directories
+# Local Terraform cache
 **/.terraform/
 
-# .tfstate files
+# Local Terragrunt cache
+**/.terragrunt-cache/*
+
+# This is a small example, so we don't need Terraform lock files.
+**/.terraform.lock.hcl
+
+# .tfstate files. in case an apply was run locally. 
 **/*.tfstate
 **/*.tfstate.*
 
-# terragrunt-cache
-**/.terragrunt-cache/*
-
-# vim
+# Vim swap files
 **/*.swp
 **/*.swo
