@@ -3,7 +3,7 @@ provider "aws" {
   region = "us-east-1"
 
   assume_role {
-    role_arn = "arn:aws:iam::123456789012:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::673239105528:role/multi-provider-example"
   }
 
   default_tags {
@@ -18,7 +18,7 @@ provider "aws" {
   region = "us-east-2"
 
   assume_role {
-    role_arn = "arn:aws:iam::123456789012:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::673239105528:role/multi-provider-example"
   }
 
   default_tags {

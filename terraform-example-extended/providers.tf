@@ -2,7 +2,7 @@ provider "aws" { // default provider
   region = var.default_region
 
   assume_role {
-    role_arn = "arn:aws:iam::123456789012:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::673239105528:role/multi-provider-example"
   }
 }
 
@@ -11,7 +11,7 @@ provider "aws" {
   region = var.account_a_region
 
   assume_role {
-    role_arn = "arn:aws:iam::123456789012:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::673239105528:role/multi-provider-example"
   }
 }
 
@@ -20,7 +20,7 @@ provider "aws" {
   region = var.account_b_region
 
   assume_role {
-    role_arn = "arn:aws:iam::123456789012:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::673239105528:role/multi-provider-example"
   }
 }
 
@@ -29,7 +29,7 @@ provider "aws" {
   region = var.account_c_region
 
   assume_role {
-    role_arn = "arn:aws:iam::123456789012:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::673239105528:role/multi-provider-example"
   }
 }
 
@@ -38,6 +38,6 @@ provider "aws" {
   region = var.account_d_region
 
   assume_role {
-    role_arn = "arn:aws:iam::123456789012:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::673239105528:role/multi-provider-example"
   }
 }

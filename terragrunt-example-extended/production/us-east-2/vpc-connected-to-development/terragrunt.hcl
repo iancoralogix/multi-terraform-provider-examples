@@ -1,7 +1,7 @@
 terraform {
   # Go all the way up until you hit the root terragrunt.hcl, then go up
   # and over in the directory structure to find our modules directroy.
-  source = "${dirname(find_in_parent_folders())}/modules/multi-account-vpc"
+  source = "${dirname(find_in_parent_folders())}//modules/multi-account-vpc"
 }
 
 # Include all the configuration in the terragrunt.hcl
@@ -32,7 +32,11 @@ locals {
   # specific target account we'd have, but the source account
   # configuration would be very DRY.
   target_region     = "us-east-1"
-  target_account_id = "123456789012"
+  target_account_id = "673239105528"
+
+  # These are really for illustrative purposes when exploring locally.
+  source_assume_role_name = "multi-provider-example"
+  target_assume_role_name = "multi-provider-example"
 
   # Select the aliases expected by the reusable module being called.
   # It is good to make this flexible as the module may change what's
@@ -51,7 +55,7 @@ provider "aws" {
   region = "${local.region}"
 
   assume_role {
-    role_arn = "arn:aws:iam::${local.account_id}:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::${local.account_id}:role/${local.source_assume_role_name}"
   }
 }
 
@@ -60,7 +64,7 @@ provider "aws" {
   region = "${local.target_region}"
 
   assume_role {
-    role_arn = "arn:aws:iam::${local.target_account_id}:role/allow-full-access-from-other-accounts"
+    role_arn = "arn:aws:iam::${local.account_id}:role/${local.target_assume_role_name}"
   }
 }
 EOF
